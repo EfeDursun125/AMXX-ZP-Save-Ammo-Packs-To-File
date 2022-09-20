@@ -1,6 +1,8 @@
 #include <amxmodx>
 #include <amxmisc>
-#include <zombieplague>
+#include <zombie_plague_special>
+
+new oldAmmo[33]
 
 public plugin_init()
 {
@@ -38,6 +40,8 @@ public client_load_ammo(id)
 
     trim(playerName)
 
+    oldAmmo[id] = zp_get_user_ammo_packs(id)
+
     // some tags can cause errors...
     for (new i = 0; i < sizeof(unsupportedTags); i++)
     {
@@ -66,7 +70,7 @@ public client_load_ammo(id)
 public client_remove(id)
 {
     new ammoPacks = zp_get_user_ammo_packs(id)
-    if (ammoPacks < 10) // for avoid creating many files
+    if (ammoPacks < 10 && oldAmmo[id] < 10) // for avoid creating many files
         return
     
     new playerName[MAX_NAME_LENGTH]
