@@ -1,6 +1,6 @@
 #include <amxmodx>
 #include <amxmisc>
-#include <zombie_plague_special>
+#include <zombieplague>
 
 public plugin_init()
 {
