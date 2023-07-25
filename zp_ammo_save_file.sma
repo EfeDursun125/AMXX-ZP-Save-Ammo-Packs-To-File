@@ -56,7 +56,7 @@ public client_putinserver(id)
 
 public client_load_ammo(id)
 {
-	new playerName[MAX_NAME_LENGTH]
+	new playerName[255]
 
 	if (get_pcvar_num(saveType) == 1)
 		get_user_authid(id, playerName, charsmax(playerName))
@@ -136,7 +136,7 @@ public client_save_ammo(id)
 	if (ammoPacks < minLimit && oldAmmo[id] < minLimit) // avoid create too many files
 		return
 	
-	new playerName[MAX_NAME_LENGTH]
+	new playerName[255]
 
 	if (get_pcvar_num(saveType) == 1)
 		get_user_authid(id, playerName, charsmax(playerName))
