@@ -13,7 +13,7 @@ new saveMins
 
 public plugin_init()
 {
-	register_plugin("[ZP] Save Ammo To File", "1.2", "EfeDursun125")
+	register_plugin("[ZP] Save Ammo To File", "1.3", "EfeDursun125")
 	saveBots = register_cvar("zp_ammo_save_bots", "1")
 	saveType = register_cvar("zp_ammo_save_type", "0")
 	saveCust = register_cvar("zp_ammo_save_folder_custom_enable", "0")
@@ -86,17 +86,17 @@ public client_load_ammo(id)
 	{
 		new name[96]
 		get_pcvar_string(saveDest, name, charsmax(name))
-		format(path, charsmax(path), "%s", name)
+		formatex(path, charsmax(path), "%s", name)
 	}
 
 	new folderName[64]
 	get_pcvar_string(saveName, folderName, charsmax(folderName))
-	format(path, charsmax(path), "%s/%s", path, folderName)
+	formatex(path, charsmax(path), "%s/%s", path, folderName)
 
 	if (!dir_exists(path))
 		mkdir(path)
 	
-	format(path, charsmax(path), "%s/%s.ammo", path, playerName)
+	formatex(path, charsmax(path), "%s/%s.ammo", path, playerName)
 
 	new file = fopen(path, "rt+")
 	if (file)
@@ -164,17 +164,17 @@ public client_save_ammo(id)
 	{
 		new name[96]
 		get_pcvar_string(saveDest, name, charsmax(name))
-		format(path, charsmax(path), "%s", name)
+		formatex(path, charsmax(path), "%s", name)
 	}
 
 	new folderName[64]
 	get_pcvar_string(saveName, folderName, charsmax(folderName))
-	format(path, charsmax(path), "%s/%s", path, folderName)
+	formatex(path, charsmax(path), "%s/%s", path, folderName)
 
 	if (!dir_exists(path))
 		mkdir(path)
 	
-	format(path, charsmax(path), "%s/%s.ammo", path, playerName)
+	formatex(path, charsmax(path), "%s/%s.ammo", path, playerName)
 
 	new value[256]
 	num_to_str(ammoPacks, value, charsmax(value))
