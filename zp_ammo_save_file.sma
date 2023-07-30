@@ -86,17 +86,17 @@ public client_load_ammo(id)
 	{
 		new name[96]
 		get_pcvar_string(saveDest, name, charsmax(name))
-		formatex(path, charsmax(path), "%s", name)
+		format(path, charsmax(path), "%s", name)
 	}
 
 	new folderName[64]
 	get_pcvar_string(saveName, folderName, charsmax(folderName))
-	formatex(path, charsmax(path), "%s/%s", path, folderName)
+	format(path, charsmax(path), "%s/%s", path, folderName)
 
 	if (!dir_exists(path))
 		mkdir(path)
 	
-	formatex(path, charsmax(path), "%s/%s.ammo", path, playerName)
+	format(path, charsmax(path), "%s/%s.ammo", path, playerName)
 
 	new file = fopen(path, "rt+")
 	if (file)
@@ -164,17 +164,17 @@ public client_save_ammo(id)
 	{
 		new name[96]
 		get_pcvar_string(saveDest, name, charsmax(name))
-		formatex(path, charsmax(path), "%s", name)
+		format(path, charsmax(path), "%s", name)
 	}
 
 	new folderName[64]
 	get_pcvar_string(saveName, folderName, charsmax(folderName))
-	formatex(path, charsmax(path), "%s/%s", path, folderName)
+	format(path, charsmax(path), "%s/%s", path, folderName)
 
 	if (!dir_exists(path))
 		mkdir(path)
 	
-	formatex(path, charsmax(path), "%s/%s.ammo", path, playerName)
+	format(path, charsmax(path), "%s/%s.ammo", path, playerName)
 
 	new value[256]
 	num_to_str(ammoPacks, value, charsmax(value))
