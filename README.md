@@ -1,5 +1,5 @@
-# ZP Save Ammo Packs To File
-This plugin saves ammopacks to file, use this if other banks not saving or banks has problems on your server
+# Amx Mod X ZP Save Ammo Packs To File
+This plugin saves zombie plague ammopacks to a file, use this if other banks not saving or banks has problems on your server
 .ammo files can be read as text with notepad and can be changed
 
 # IMPORTANT
