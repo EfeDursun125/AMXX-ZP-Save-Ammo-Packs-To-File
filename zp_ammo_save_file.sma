@@ -143,7 +143,6 @@ public client_save_ammo(id)
 	trim(playerName)
 
 	// some tags can cause errors...
-	// some tags can cause errors...
 	// define it here to save memory space
 	new const unsupportedTags[][] =
 	{
